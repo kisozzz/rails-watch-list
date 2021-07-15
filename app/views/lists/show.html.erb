@@ -1,0 +1,33 @@
+<div class="card">
+	<%= @list.name%>
+</div>
+
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= bookmark.comment %>
+    <%= bookmark.movie.title %>
+    <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+  <% end %>
+
+<div>
+	<%= simple_form_for [@list, @bookmark] do |f| -%>
+	<%= f.error_notification %>
+  	<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+	<%= f.association :movie %>
+	<%= f.input :comment %>
+	<%= f.submit "Add Movie", class: "btn btn-primary" %>
+	<% end -%>
+</div>
+
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>

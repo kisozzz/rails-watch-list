@@ -1,0 +1,12 @@
+
+<div class="big_container">
+	<div class="container">
+		 <div class="row">
+		    <% @movies.each do |movie| %>
+			     <%= image_tag movie.poster_url, alt: "movie posters", class: "poster col-md-4 col-xl-3" %>
+			<% end -%>
+		</div>
+	</div>
+</div>
+
+

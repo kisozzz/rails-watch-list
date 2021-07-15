@@ -1,0 +1,8 @@
+<% @lists.each do |list| %>	
+	<div class="card" style="background-image: url('<%= list.image_url %>')">
+        <%= link_to list.name, list_path(list) %>
+    </div>
+<% end -%>
+
+<p>create a list</p>
+<%= render "form"%>

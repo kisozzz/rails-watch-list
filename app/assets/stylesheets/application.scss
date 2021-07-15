@@ -1,0 +1,44 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import "components/navbar";
+
+@import "movies";
+
+body {
+	background-color: #141311;
+}
+
+.navbar {
+	background-color: #141311;
+}
+
+.navbar-nav,
+.mr-auto {
+	flex: 1;
+	margin: auto !important;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.text-brand {
+	color: #DDD3BA;
+}
+
+.text-yellow {
+	color: #686458;
+	&:hover{
+		color: #DDD3BA;
+	}
+}
+
