@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=  @list.image_url %>);">
   <div class="container">
     <h1>My <%= @list.name.capitalize %> Movie Box</h1>
-    <a class="btn btn btn-outline-success mt-5" href="#">Add Movie</a>
+    <a class="btn btn btn-outline-success mt-5" href="#addForm">Add Movie</a>
   </div>
 </div>
 
@@ -30,51 +30,26 @@
 
 
 
-<div class="container-fluid contenedor text-center">
-   <h1 class="text-center">CARDS BY Francisco Kataldo</h1>
-   <div class=" container text-center">
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto ">
-         <div class="ver_mas text-center">
-            <span  class="lnr lnr-eye"></span>
-         </div>
-         <article class="text-left">
-            <h2>TÍTULO DE <br>LA IMAGEN</h2>
-            <h4>Descripción corta de la imagen en cuestión</h4>
-         </article>
-         <img src="https://img-aws.ehowcdn.com/400x400/ds-img.studiod.com/Half_Dome_from_Glacier_Point0_1.jpg" alt="">
+<section class="container-form" id="addForm">
+  <div class="card-form">
+    <div class="content">
+      <!-- <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg" alt="mparticle"> -->
+      <h6> Add Movie</h6>
+      <div class="hover_content">
+        <p>
+			<div>
+				<%= simple_form_for [@list, @bookmark] do |f| -%>
+				<%= f.error_notification %>
+			  	<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+				<%= f.association :movie %>
+				<%= f.input :comment %>
+				<%= f.submit "Add Movie", class: "btn btn-primary" %>
+				<% end -%>
+			</div>
+        </p>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto">
-         <div class="ver_mas text-center">
-            <span id="click" class="lnr lnr-eye"></span>
-         </div>
-         <article class="text-left">
-            <h2>TÍTULO DE <br>LA IMAGEN</h2>
-            <h4>Descripción corta de la imagen en cuestión</h4>
-         </article>
-         <img src="https://pbs.twimg.com/profile_images/781518570018648065/HcvZhTVn_400x400.jpg" alt="">
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto">
-         <div class="ver_mas text-center">
-            <span class="lnr lnr-eye"></span>
-         </div>
-         <article class="text-left">
-            <h2>TÍTULO DE <br>LA IMAGEN</h2>
-            <h4>Descripción corta de la imagen en cuestión</h4>
-         </article>
-         <img src="https://ericrenardphotography.com/wp-content/uploads/Yosemite_Valley_2861-1-400x400.jpg" alt="">
-      </div>
-   </div>
-</div>
+    </div>
+  </div>       
+</section>
 
-
-
-<div>
-	<%= simple_form_for [@list, @bookmark] do |f| -%>
-	<%= f.error_notification %>
-  	<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-	<%= f.association :movie %>
-	<%= f.input :comment %>
-	<%= f.submit "Add Movie", class: "btn btn-primary" %>
-	<% end -%>
-</div>
 
