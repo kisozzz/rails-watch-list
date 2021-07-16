@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
@@ -22,7 +22,7 @@
             <a class="nav-link" href="/movies"><span class="text-yellow">Home</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/lists"><span class="text-yellow">My List</span></a>
+            <a class="nav-link" href="/lists"><span class="text-yellow">!Like</span></a>
           </li>
         </ul>
       </div>

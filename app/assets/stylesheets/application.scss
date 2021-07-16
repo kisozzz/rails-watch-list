@@ -14,13 +14,16 @@
 @import "components/navbar";
 
 @import "movies";
+@import "lists";
+@import "bookmarks";
+
 
 body {
 	background-color: #141311;
 }
 
 .navbar {
-	background-color: #141311;
+	background-color: #DFF64F;
 }
 
 .navbar-nav,
@@ -32,13 +35,13 @@ body {
 }
 
 .text-brand {
-	color: #DDD3BA;
+	color: #141311;
 }
 
 .text-yellow {
-	color: #686458;
+	color: #775D1E;
 	&:hover{
-		color: #DDD3BA;
+		color: #141311;
 	}
 }
 
